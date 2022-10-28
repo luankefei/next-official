@@ -2,17 +2,17 @@ import { Component, ErrorInfo } from "react";
 
 import { ErrorPage } from "./error.style";
 
-type TProps = {
+interface Props {
   children: any;
-};
+}
 
-type TState = {
+interface State {
   hasError: boolean;
   errorInfo: ErrorInfo | null;
-};
+}
 
-class ErrorBoundray extends Component<TProps, TState> {
-  constructor(props: TProps) {
+class ErrorBoundray extends Component<Props, State> {
+  constructor(props: Props) {
     super(props);
 
     this.state = {
@@ -45,7 +45,7 @@ class ErrorBoundray extends Component<TProps, TState> {
       <ErrorPage>
         <div>{errorInfo?.componentStack}</div>
         <img alt="qrcode" src="/icons/close.png" />
-        <div>好像出了点问题，页面空空如也</div>
+        <div>Something Happened Here ...</div>
       </ErrorPage>
     ) : (
       children

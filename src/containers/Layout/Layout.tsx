@@ -1,8 +1,8 @@
 import { LayoutContainer } from "./layout.style";
 
-type LayoutProps = {
+interface LayoutProps {
   children: JSX.Element;
-};
+}
 
 const Layout = ({ children }: LayoutProps) => (
   <LayoutContainer>{children}</LayoutContainer>
